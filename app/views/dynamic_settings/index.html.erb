@@ -1,0 +1,24 @@
+<h4>List of Dynamic Settings</h4>
+<table class="eight">
+  <thead>
+  <tr>
+    <th class="one" style="text-align:center"><%=DynamicSetting.human_attribute_name :ns %></th>
+    <th class="two" style="text-align:center"><%=DynamicSetting.human_attribute_name :name %></th>
+    <th class="three" style="text-align:center"><%=DynamicSetting.human_attribute_name :value %></th>
+    <th class="four" style="text-align:center">Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <%- @dynamic_settings.each do |ds| %>
+      <tr>
+        <td><%= ds.ns.html_safe %></td>
+        <td><%= ds.name.html_safe %></td>
+        <td><%= ds.value.html_safe %></td>
+        <td style="text-align:center">
+          <%= link_to "Edit", edit_dynamic_setting_path(ds)%>
+        </td>
+      </tr>
+  <% end %>
+  </tbody>
+
+</table>

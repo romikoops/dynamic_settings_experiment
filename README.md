@@ -1,20 +1,18 @@
 Dynamic Settings Experiment
 ================
 
-This application was generated with the [rails_apps_composer](https://github.com/RailsApps/rails_apps_composer) gem
-provided by the [RailsApps Project](http://railsapps.github.io/).
+Sometimes it's required to change global application settings in run time. Good example - recommendation system,
+based on mathematical formulas with empirical factors. In order to have the best recommendations, you need to correct
+empirical factors in run time and find the best ones. 
 
-Rails Composer is open source and supported by subscribers. Please join RailsApps to support development of Rails Composer.
+This is new Rails app generated from scratch with implemented Dynamic Settings functionality. It uses [Global](https://github.com/railsware/global)
+gem for default settings, RDBMS for permanent data storing and Redis for caching.
+
 
 Problems? Issues?
 -----------
 
-Need help? Ask on Stack Overflow with the tag 'railsapps.'
-
-Your application contains diagnostics in the README file. Please provide a copy of the README file when reporting any issues.
-
-If the application doesn’t work as expected, please [report an issue](https://github.com/RailsApps/rails_apps_composer/issues)
-and include the diagnostics.
+Contact me directly by email romikoops1@gmail.com
 
 Ruby on Rails
 -------------
@@ -28,6 +26,13 @@ Learn more about [Installing Rails](http://railsapps.github.io/installing-rails.
 
 Getting Started
 ---------------
+
+1. Add desired Global setting to ./config/global directory
+2. Add new file name to KNOWN_GLOBAL_SETTINGS in ./app/models/dynamic_setting.rb
+3. Start rails server and open web application
+4. Update any setting
+5. Enjoy it!
+
 
 Documentation and Support
 -------------------------
@@ -46,3 +51,4 @@ Credits
 
 License
 -------
+MIT license

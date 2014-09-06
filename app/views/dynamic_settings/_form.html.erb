@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="six columns with-border">
+    <%= form_for @dynamic_setting, :html => {:class => 'custom entity_form', :multipart => true} do |f| %>
+        <% if @dynamic_setting.errors.any? %>
+            <div class="row">
+              <div class="nine columns offset-by-three">
+                <div id="error_explanation">
+                  <h2>
+                    <%= "#{pluralize(@dynamic_setting.errors.count, "error")} prohibited this dynamic setting from being saved:" %>
+                  </h2>
+                  <ul>
+                    <% @dynamic_setting.errors.full_messages.each do |msg| %>
+                        <li>
+                          <%= msg %>
+                        </li>
+                    <% end %>
+                  </ul>
+                </div>
+              </div>
+            </div>
+        <% end %>
+
+        <div>
+          <%= f.label :ns , :class => 'right inline' %>
+          <%= f.text_field :ns, disabled: true%>
+        </div>
+        <div>
+          <%= f.label :name , :class => 'right inline' %>
+          <%= f.text_field :name, disabled: true%>
+        </div>
+        <div>
+          <%= f.label :value %>
+          <%= f.text_field :value %>
+        </div>
+
+        <div class="row panel text-center">
+          <%= f.submit 'Save', :class => 'button' %>
+          <%= link_to 'Back', dynamic_settings_path, :class => 'button secondary' %>
+        </div>
+    <% end %>
+  </div>
+</div>

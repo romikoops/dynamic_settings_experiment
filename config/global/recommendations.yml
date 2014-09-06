@@ -1,0 +1,4 @@
+default:
+  exact_score_factor: 1
+  like_score_factor: 0.5
+  more_zero_job_count_factor: 4
